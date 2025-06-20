@@ -1,0 +1,301 @@
+.order {
+  padding: 120px 0 150px 0;
+  // max-height: 920px;
+  background-image: url("src/assets/images/order-background.png");
+  @include background-cover;
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+
+  &__container {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-80;
+    margin-inline: $spacing-80;
+
+    @include mobile {
+      margin-inline: $spacing-8;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-36;
+    font-weight: $font-weight-800;
+    margin-bottom: $spacing-24;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: $font-size-28;
+    }
+
+    @include mobile {
+      font-size: $font-size-24;
+    }
+  }
+
+  &__title-highlight {
+    color: $color-accent;
+  }
+
+  &__subtitle {
+    font-size: $font-size-18;
+    color: #bbbbbb;
+    margin: 0;
+  }
+
+  &__steps {
+    margin-bottom: $spacing-80;
+  }
+
+  &__form {
+    @include container;
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  margin-inline: $spacing-24;
+
+  // @include tablet {
+  //   flex-direction: column;
+  //   gap: $spacing-24;
+  // }
+
+  @include tablet-lg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    width: 189px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 19px;
+  }
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__text {
+    font-size: $font-size-base;
+    margin: 0;
+
+    @include tablet-xl {
+      padding-inline: 20px;
+    }
+  }
+}
+
+.steps__dots {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  position: relative;
+  z-index: 2;
+  margin-left: -28px;
+  margin-right: -28px;
+  padding-bottom: 66px;
+
+  .steps__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: $border-radius-round;
+    background: #c4c4c4;
+    display: inline-block;
+  }
+
+  @include tablet-xl {
+    padding-bottom: 85px;
+  }
+
+  @include tablet-lg {
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.form {
+  &__row {
+    @include grid-container;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 29px;
+    align-items: center;
+
+    @include tablet-lg {
+      grid-template-columns: 1fr;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &--slider {
+      grid-column: 1 / 3;
+
+      @include tablet {
+        grid-column: auto;
+      }
+    }
+
+    &--file {
+      grid-column: 3 / 4;
+
+      @include tablet {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &__slider-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-16;
+  }
+
+  &__label {
+    font-size: $font-size-18;
+  }
+
+  &__input {
+    @include form-input;
+  }
+
+  &__select {
+    @include form-input;
+    cursor: pointer;
+
+    &:focus {
+      cursor: text;
+    }
+  }
+
+  &__file {
+    @include visually-hidden;
+  }
+
+  &__file-label {
+    @include button-secondary;
+    font-size: 15px;
+    border: 1px $color-accent solid;
+    border-radius: $border-radius-3;
+    color: $color-text-placeholder;
+    gap: $spacing-8;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-white;
+    }
+
+    @include tablet-xl {
+      padding: 12px 20px;
+    }
+  }
+
+  &__file-icon {
+    width: 17px;
+    height: auto;
+  }
+
+  &__slider-container {
+  }
+
+  &__slider {
+    width: 100%;
+    margin-top: 16px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+
+    // Ползунок слайдера
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      background: $color-accent;
+      border: 3px solid #286690;
+      border-radius: $border-radius-round;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    &::-webkit-slider-thumb:hover {
+      transform: scale(1.3);
+    }
+    &::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      background: $color-accent;
+      border: 3px solid #286690;
+      border-radius: $border-radius-round;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    &::-ms-thumb {
+      width: 24px;
+      height: 24px;
+      background: $color-accent;
+      border: 3px solid #286690;
+      border-radius: $border-radius-round;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    // Для Firefox
+    &::-moz-range-track {
+      background: rgba(255, 255, 255, 0.7);
+      height: 6px;
+      border-radius: 5px;
+    }
+    // Для IE
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+    }
+  }
+
+  &__slider-value {
+    text-align: center;
+    font-weight: $font-weight-700;
+    font-size: $font-size-18;
+    color: $color-white;
+  }
+
+  &__actions {
+    text-align: center;
+    margin-top: 52px;
+
+    @include tablet {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__actions-button {
+    @include button-primary;
+    padding: 12px 145px;
+
+    @include tablet {
+      padding: 12px 0;
+    }
+  }
+}

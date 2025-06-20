@@ -1,0 +1,42 @@
+// Универсальные ссылки (БЭМ)
+.link {
+  color: $color-accent;
+  text-decoration: none;
+  @include transition;
+  
+  &:hover {
+    color: $color-accent-light;
+    text-decoration: underline;
+  }
+  
+  // Модификаторы
+  &--white {
+    color: $color-white;
+    
+    &:hover {
+      color: rgba($color-white, 0.8);
+    }
+  }
+  
+  &--dark {
+    color: $color-text-primary;
+    
+    &:hover {
+      color: $color-accent;
+    }
+  }
+  
+  &--underlined {
+    text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  // Модификатор для кнопок-ссылок
+  &--button {
+    @include button-base;
+    @include button-secondary;
+  }
+}

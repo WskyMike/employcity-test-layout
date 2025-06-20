@@ -1,0 +1,39 @@
+// Универсальные кнопки (БЭМ)
+.button {
+  @include button-base;
+  
+  // Модификаторы размеров
+  &--small {
+    padding: $spacing-4 $spacing-16;
+    font-size: $font-size-13;
+  }
+  
+  &--large {
+    padding: $spacing-24 145px;
+    font-weight: $font-weight-700;
+  }
+  
+  // Модификаторы стилей
+  &--primary {
+    @include button-primary;
+  }
+  
+  &--secondary {
+    @include button-secondary;
+  }
+
+  
+  // Модификатор полной ширины
+  &--full-width {
+    width: 100%;
+  }
+  
+  // Модификатор только с иконкой
+  &--icon-only {
+    padding: $spacing-8;
+    width: auto;
+    height: auto;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}

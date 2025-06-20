@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway Bold"), local("Raleway-Bold"),
+    url("Raleway-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}

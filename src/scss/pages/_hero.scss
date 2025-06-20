@@ -1,0 +1,95 @@
+.hero {
+  min-height: 850px;
+  background-image: url("src/assets/images/hero-background.webp");
+  @include background-cover;
+  padding-top: $header-height;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding-top: 108px;
+    padding-right: 408px;
+
+    @include tablet-xl {
+      padding-right: 208px;
+    }
+
+    @include mobile {
+      padding-right: 0px;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-48;
+    text-transform: uppercase;
+    font-weight: $font-weight-700;
+    margin-bottom: 85px;
+
+    @include desktop {
+      font-size: $font-size-40;
+    }
+
+    @include tablet {
+      font-size: $font-size-36;
+    }
+
+    @include mobile-sm {
+      font-size: $font-size-28;
+    }
+  }
+
+  &__title-highlight {
+    color: $color-accent;
+  }
+
+  &__description {
+    margin-bottom: 76px;
+  }
+
+  &__text {
+    font-size: $font-size-20;
+    font-weight: $font-weight-700;
+    color: $color-black;
+
+    @include desktop {
+      font-size: $font-size-18;
+    }
+
+    @include tablet {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__list {
+    padding-left: 9px;
+  }
+
+  &__list-item {
+    font-size: $font-size-20;
+    color: $color-black;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      font-size: $font-size-18;
+    }
+
+    @include tablet {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 31px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

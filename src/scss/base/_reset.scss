@@ -1,0 +1,68 @@
+// Сброс стилей для браузеров
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-primary;
+  background-color: $color-white;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Сброс для списков
+ul,
+ol {
+  list-style: none;
+}
+
+// Сброс для ссылок
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Сброс для изображений
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+// Сброс для кнопок
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+// Сброс для форм
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// Сброс для fieldset
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}

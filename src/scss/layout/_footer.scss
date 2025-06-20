@@ -1,0 +1,101 @@
+.footer {
+  background-color: $color-footer-bg;
+  color: $color-white;
+  padding: 30px 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 43px;
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+
+  &__copyright {
+    flex-shrink: 0;
+    font-size: $font-size-13;
+  }
+
+  &__payment {
+    display: flex;
+    gap: 45px;
+    align-items: center;
+
+    @include mobile {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: $spacing-8;
+    }
+  }
+
+  &__payment-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__payment-text {
+    font-size: $font-size-13;
+    color: #c3c3c3;
+  }
+
+  &__contacts {
+    display: flex;
+    font-size: $font-size-13;
+    gap: 45px;
+
+    @include mobile {
+      // flex-direction: column;
+      gap: $spacing-8;
+    }
+  }
+
+  &__contacts-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__link {
+    color: $color-white;
+    @include transition;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+// Разделители
+.footer__content > *:not(:first-child) {
+  position: relative;
+  padding-left: 41px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background: #c3c3c3;
+
+    @include tablet-lg {
+      display: none;
+    }
+  }
+
+  @include tablet-lg {
+    padding-left: 0px;
+  }
+}
